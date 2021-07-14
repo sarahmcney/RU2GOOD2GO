@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">RU2GOOD2GO</string>
+    <string name="welcome_back">Welcome back!</string>
+    <string name="welcome">Welcome!</string>
+    <string name="sign_in">Sign in</string>
+    <string name="sign_up">Sign up to get started</string>
+    <string name="login">Login</string>
+    <string name="sign_up_btn">Sign up</string>
+    <string name="signup_link">Don\'t have an account? Sign up</string>
+    <string name="signin_link">I\'m already a member, Sign in</string>
+    <string name="email">Email</string>
+    <string name="pass">Password</string>
+    <string name="full_name">Full Name</string>
+    <string name="forgot_pass">Forgot password?</string>
 </resources>

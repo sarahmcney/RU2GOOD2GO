@@ -7,34 +7,48 @@
     android:layout_marginEnd="20dp"
     android:layout_marginStart="20dp"
     android:layout_marginTop="130dp"
-    tools:context=".SignIn">
+    tools:context=".SignUp">
 
     <TextView
-        android:id="@+id/welcomeBackTextView"
+        android:id="@+id/welcomeTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fontFamily="@font/montserrat_bold"
-        android:text="@string/welcome_back"
+        android:text="@string/welcome"
         android:textColor="@color/lightGray"
         android:textSize="25sp" />
 
     <TextView
-        android:id="@+id/signInTextView"
+        android:id="@+id/signUpTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginRight="20dp"
         android:layout_marginTop="20dp"
-        android:text="@string/sign_in"
+        android:text="@string/sign_up"
         android:textColor="#000000"
-        android:textSize="50sp"
+        android:textSize="40sp"
         android:fontFamily="@font/montserrat_bold" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/signInTextView"
-        android:layout_above="@+id/loginButton"
+        android:layout_below="@+id/signUpTextView"
+        android:layout_above="@+id/signUpButton"
         android:gravity="center"
         android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/fullNameEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:autofillHints="@string/full_name"
+            android:hint="@string/full_name"
+            android:textColor="@color/darkGray"
+            android:textColorHint="@color/lightGray"
+            android:backgroundTint="@color/red"
+            android:fontFamily="@font/montserrat_semibold"
+            android:textSize="20sp"/>
 
         <EditText
             android:id="@+id/emailEditText"
@@ -46,6 +60,7 @@
             android:textColor="@color/darkGray"
             android:textColorHint="@color/lightGray"
             android:backgroundTint="@color/red"
+            android:layout_marginTop="10dp"
             android:fontFamily="@font/montserrat_semibold"
             android:textSize="20sp"/>
 
@@ -64,19 +79,6 @@
             android:textSize="20sp"/>
 
         <TextView
-            android:id="@+id/forgotPasswordTextView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/forgot_pass"
-            android:textColor="@color/darkGray"
-            android:fontFamily="@font/montserrat_bold"
-            android:textSize="15sp"
-            android:gravity="end"
-            android:clickable="true"
-            android:focusable="true"
-            />
-
-        <TextView
             android:id="@+id/test"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -92,10 +94,10 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/loginButton"
+        android:id="@+id/signUpButton"
         android:layout_width="match_parent"
         android:layout_height="55dp"
-        android:text="@string/login"
+        android:text="@string/sign_up_btn"
         android:clickable="true"
         android:focusable="true"
         android:gravity="center"
@@ -104,11 +106,11 @@
         android:textSize="15sp"
         android:fontFamily="@font/montserrat_bold"
         android:background="@drawable/rounded_corners"
-        android:layout_above="@id/linkToSignup"
+        android:layout_above="@id/linkToSignIn"
         android:visibility="visible"/>
 
     <TextView
-        android:id="@+id/linkToSignup"
+        android:id="@+id/linkToSignIn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
@@ -116,7 +118,7 @@
         android:clickable="true"
         android:focusable="true"
         android:gravity="center"
-        android:text="@string/signup_link"
+        android:text="@string/signin_link"
         android:textColor="@color/darkGray"
         android:textSize="15sp"
         android:layout_marginBottom="20dp"
