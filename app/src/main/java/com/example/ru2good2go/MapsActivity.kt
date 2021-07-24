@@ -1,6 +1,7 @@
 package com.example.ru2good2go
 
 import android.Manifest
+import android.content.Intent
 import android.content.pm.PackageManager
 import android.location.Address
 import android.location.Geocoder
@@ -8,8 +9,10 @@ import android.location.Location
 import android.location.LocationListener
 import android.os.Build
 import android.os.Bundle
-import android.widget.SearchView
-import android.widget.Toast
+import android.view.View
+import android.view.Window
+import android.view.WindowManager
+import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import com.example.ru2good2go.databinding.ActivityMapsBinding
@@ -19,6 +22,7 @@ import com.google.android.gms.location.LocationRequest
 import com.google.android.gms.location.LocationServices
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
+import com.google.android.gms.maps.GoogleMap.OnMarkerClickListener
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.BitmapDescriptorFactory
@@ -40,7 +44,8 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, LocationListener,
     private lateinit var searchView : SearchView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
+        requestWindowFeature(Window.FEATURE_NO_TITLE)
+        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN)
         binding = ActivityMapsBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
@@ -49,7 +54,11 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, LocationListener,
             .findFragmentById(R.id.map) as SupportMapFragment
         mapFragment.getMapAsync(this)
 
-
+        val backArrow : ImageView = findViewById(R.id.backArrow)
+        backArrow.setOnClickListener {
+            val intent = Intent(this, SignIn::class.java) //for now
+            startActivity(intent)
+        }
 
         searchView = findViewById(R.id.searchLocation)
 
@@ -128,6 +137,25 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, LocationListener,
         mMap.addMarker(MarkerOptions().position(fritzs).title("Fritz's"))
         val honeygrow = LatLng(40.4991, -74.4481)
         mMap.addMarker(MarkerOptions().position(honeygrow).title("Honeygrow"))
+
+        mMap.setOnMarkerClickListener { marker ->
+            val name : String = marker.title
+            val restaurantImg : ImageView = findViewById(R.id.restaurantImg)
+            val restaurantTextView : TextView = findViewById(R.id.restaurantName)
+            restaurantTextView.text = name
+            val linearLayout : LinearLayout = findViewById(R.id.fragment_layout)
+
+            //setting correct images -- what is the best way to do this when we have lots of restaurants?
+            if(marker.title == "Honeygrow") {
+                restaurantImg.setImageResource(R.mipmap.honeygrow_foreground)
+            } else if(marker.title == "Fritz's") {
+                restaurantImg.setImageResource(R.mipmap.fritzs_foreground)
+            } else if(marker.title == "Tacoria") {
+                restaurantImg.setImageResource(R.mipmap.tacoria_foreground)
+            }
+            linearLayout.visibility = View.VISIBLE
+            true
+        }
 
     }
 

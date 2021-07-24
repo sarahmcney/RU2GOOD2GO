@@ -16,5 +16,8 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_maps">Map</string>
+    <string name="restaurant">Restaurant Name</string>
+    <string name="location">New Brunswick, NJ</string>
+    <string name="view_offers">View available offers</string>
 
 </resources>
