@@ -119,7 +119,7 @@
         android:gravity="center"
         android:padding="12dp"
         android:textColor="#FFFFFF"
-        android:textSize="15sp"
+        android:textSize="20sp"
         android:fontFamily="@font/montserrat_bold"
         android:background="@drawable/rounded_corners"
         android:layout_above="@id/linkToSignup"
