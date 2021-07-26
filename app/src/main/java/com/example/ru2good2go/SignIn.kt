@@ -3,7 +3,6 @@ package com.example.ru2good2go
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
 import android.view.Window
 import android.view.WindowManager
 import android.widget.Button
@@ -27,16 +26,18 @@ class SignIn : AppCompatActivity() {
         val signUpLink = findViewById<TextView>(R.id.linkToSignup)
 
         signUpLink.setOnClickListener {
-            val intent = Intent(this, MapsActivity::class.java)
+            val intent = Intent(this, SignUp::class.java)
             startActivity(intent)
         }
 
         loginButton.setOnClickListener {
-            var emailInput = emailEditText.text.toString()
+            /*var emailInput = emailEditText.text.toString()
             var passInput = passEditText.text.toString()
 
             testText.text = emailInput + ", " + passInput
-            testText.visibility = View.VISIBLE
+            testText.visibility = View.VISIBLE*/
+            val intent = Intent(this, BrowseRestaurants::class.java)
+            startActivity(intent)
         }
     }
 }

@@ -33,12 +33,14 @@ class SignUp : AppCompatActivity() {
         }
 
         signUpButton.setOnClickListener {
-            var fullNameInput = fullNameEditText.text.toString()
+            /*var fullNameInput = fullNameEditText.text.toString()
             var emailInput = emailEditText.text.toString()
             var passInput = passEditText.text.toString()
 
             testText.text = fullNameInput + ", " + emailInput + ", " + passInput
-            testText.visibility = View.VISIBLE
+            testText.visibility = View.VISIBLE*/
+            val intent = Intent(this, BrowseRestaurants::class.java)
+            startActivity(intent)
         }
     }
 }

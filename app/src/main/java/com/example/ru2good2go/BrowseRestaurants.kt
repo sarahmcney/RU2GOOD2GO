@@ -32,7 +32,7 @@ import com.google.android.gms.maps.model.MarkerOptions
 import java.io.IOException
 
 
-class MapsActivity : AppCompatActivity(), OnMapReadyCallback, LocationListener,
+class BrowseRestaurants : AppCompatActivity(), OnMapReadyCallback, LocationListener,
             GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener {
 
     private lateinit var mMap: GoogleMap
@@ -56,8 +56,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, LocationListener,
 
         val backArrow : ImageView = findViewById(R.id.backArrow)
         backArrow.setOnClickListener {
-            val intent = Intent(this, SignIn::class.java) //for now
-            startActivity(intent)
+            onBackPressed()
         }
 
         searchView = findViewById(R.id.searchLocation)
