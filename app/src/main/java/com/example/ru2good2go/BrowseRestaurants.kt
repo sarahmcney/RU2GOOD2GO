@@ -131,12 +131,18 @@ class BrowseRestaurants : AppCompatActivity(), OnMapReadyCallback, LocationListe
         mMap!!.animateCamera(CameraUpdateFactory.zoomTo(14.0f))
 
         //dummy data -- markers
-        val tacoria = LatLng(40.4977, -74.4489)
-        mMap.addMarker(MarkerOptions().position(tacoria).title("Tacoria"))
-        val fritzs = LatLng(40.4992, -74.4520)
-        mMap.addMarker(MarkerOptions().position(fritzs).title("Fritz's"))
-        val honeygrow = LatLng(40.4991, -74.4481)
-        mMap.addMarker(MarkerOptions().position(honeygrow).title("Honeygrow"))
+        var position = LatLng(40.4977, -74.4489)
+        mMap.addMarker(MarkerOptions().position(position).title("Tacoria"))
+        position = LatLng(40.4992, -74.4520)
+        mMap.addMarker(MarkerOptions().position(position).title("Fritz's"))
+        position = LatLng(40.4991, -74.4481)
+        mMap.addMarker(MarkerOptions().position(position).title("Honeygrow"))
+        position = LatLng(40.4978, -74.4485)
+        mMap.addMarker(MarkerOptions().position(position).title("The Halal Guys"))
+        position = LatLng(40.4944, -74.4446)
+        mMap.addMarker(MarkerOptions().position(position).title("Ramen Nagomi"))
+        position = LatLng(40.5004, -74.4560)
+        mMap.addMarker(MarkerOptions().position(position).title("Daniel's Pizzeria"))
 
         mMap.setOnMarkerClickListener { marker ->
             val name : String = marker.title
@@ -152,7 +158,14 @@ class BrowseRestaurants : AppCompatActivity(), OnMapReadyCallback, LocationListe
                 restaurantImg.setImageResource(R.mipmap.fritzs_foreground)
             } else if(marker.title == "Tacoria") {
                 restaurantImg.setImageResource(R.mipmap.tacoria_foreground)
+            } else if(marker.title == "The Halal Guys") {
+                restaurantImg.setImageResource(R.mipmap.halalguys_foreground)
+            } else if(marker.title == "Ramen Nagomi") {
+                restaurantImg.setImageResource(R.mipmap.ramennagomi_foreground)
+            } else if(marker.title == "Daniel's Pizzeria") {
+                restaurantImg.setImageResource(R.mipmap.daniels_foreground)
             }
+
             linearLayout.visibility = View.VISIBLE
             true
         }

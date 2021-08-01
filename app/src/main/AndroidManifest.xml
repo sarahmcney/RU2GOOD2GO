@@ -33,6 +33,9 @@
             android:name=".SignUp"
             android:theme="@style/AppTheme" />
         <activity
+            android:name=".Feed"
+            android:theme="@style/AppTheme"/>
+        <activity
             android:name=".SignIn"
             android:theme="@style/AppTheme">
             <intent-filter>

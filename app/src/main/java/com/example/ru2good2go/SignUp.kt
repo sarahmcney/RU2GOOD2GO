@@ -39,7 +39,7 @@ class SignUp : AppCompatActivity() {
 
             testText.text = fullNameInput + ", " + emailInput + ", " + passInput
             testText.visibility = View.VISIBLE*/
-            val intent = Intent(this, BrowseRestaurants::class.java)
+            val intent = Intent(this, Feed::class.java)
             startActivity(intent)
         }
     }
