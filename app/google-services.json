@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "548799923672",
+    "project_id": "rubites",
+    "storage_bucket": "rubites.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:548799923672:android:81a27c2315958b967c9ead",
+        "android_client_info": {
+          "package_name": "com.example.ru2good2go"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "548799923672-pi73633ol0pl3s46vjfa2rs35lpifrk4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAv201-QXpEZF9-9O7EEi-HmvRFGsTlxqA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "548799923672-pi73633ol0pl3s46vjfa2rs35lpifrk4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
