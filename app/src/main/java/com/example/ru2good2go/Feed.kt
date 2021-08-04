@@ -1,12 +1,12 @@
 package com.example.ru2good2go
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageView
-import android.widget.LinearLayout
-import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.libraries.places.api.Places
 
 class Feed : AppCompatActivity() {
     private val restaurantList = populateList() //temporary -- fills recyclerview with dummy data
@@ -15,9 +15,11 @@ class Feed : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_feed)
 
+        Places.initialize(this, R.string.google_services_api_key.toString())
+        val placesClient = Places.createClient(this)
         val recycler_view : RecyclerView = findViewById(R.id.recycler_view)
         recycler_view.adapter = adapter
-        recycler_view.layoutManager = LinearLayoutManager(this)
+        recycler_view.layoutManager = GridLayoutManager(this, 2, GridLayoutManager.HORIZONTAL, false)
 
         val browseLink : ImageView = findViewById(R.id.browse_icon)
         browseLink.setOnClickListener {
@@ -62,6 +64,9 @@ class Feed : AppCompatActivity() {
         item = RestaurantListItem(image, "Daniel's Pizzeria", "Pizza", "1.0 miles away", "Open til 1:00AM")
         list += item
 
+        image = R.mipmap.daniels_foreground
+        item = RestaurantListItem(image, "Daniel's Pizzeria", "Pizza", "1.0 miles away", "Open til 1:00AM")
+        list += item
         return list
     }
 }

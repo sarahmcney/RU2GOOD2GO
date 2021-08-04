@@ -160,6 +160,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/icons"
         android:clipToPadding="false"
+        android:orientation="horizontal"
         tools:listitem="@layout/offer_item" />
 
 
