@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-
+//for recyclerview
 class RestaurantListAdapter(private val restaurantList: List<RestaurantListItem>) : RecyclerView.Adapter<RestaurantListAdapter.RestaurantListViewHolder>() {
     class RestaurantListViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val restaurantImage: ImageView = itemView.findViewById(R.id.restaurant_image)

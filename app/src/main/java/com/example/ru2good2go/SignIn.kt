@@ -8,6 +8,8 @@ import android.view.WindowManager
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import androidx.databinding.DataBindingUtil
+import com.example.ru2good2go.databinding.ActivityMainBinding
 
 class SignIn : AppCompatActivity() {
 

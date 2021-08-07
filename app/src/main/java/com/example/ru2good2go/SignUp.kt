@@ -9,14 +9,23 @@ import android.view.WindowManager
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.ViewModelProviders
+import com.example.ru2good2go.databinding.ActivitySignUpBinding
 
 class SignUp : AppCompatActivity() {
-
+    private val viewModel: PlaceViewModel by lazy {
+        ViewModelProvider(this).get(PlaceViewModel::class.java)
+    }
+    private lateinit var binding: ActivitySignUpBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         requestWindowFeature(Window.FEATURE_NO_TITLE)
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN)
         setContentView(R.layout.activity_sign_up)
+
+
 
         val fullNameEditText = findViewById<EditText>(R.id.fullNameEditText)
         val emailEditText = findViewById<EditText>(R.id.emailEditText)
@@ -42,5 +51,6 @@ class SignUp : AppCompatActivity() {
             val intent = Intent(this, Feed::class.java)
             startActivity(intent)
         }
+
     }
 }
