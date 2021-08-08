@@ -28,7 +28,8 @@ class SignIn : AppCompatActivity() {
         val signUpLink = findViewById<TextView>(R.id.linkToSignup)
 
         signUpLink.setOnClickListener {
-            val intent = Intent(this, SignUp::class.java)
+            //val intent = Intent(this, SignUp::class.java)
+            val intent = Intent(this, PlacesTest::class.java) //starts placesTest activity for now, will update when done
             startActivity(intent)
         }
 

@@ -20,7 +20,7 @@ class Feed : AppCompatActivity() {
         val recycler_view : RecyclerView = findViewById(R.id.recycler_view)
         recycler_view.adapter = adapter
         recycler_view.layoutManager = GridLayoutManager(this, 2, GridLayoutManager.HORIZONTAL, false)
-        
+
 
         val browseLink : ImageView = findViewById(R.id.browse_icon)
         browseLink.setOnClickListener {

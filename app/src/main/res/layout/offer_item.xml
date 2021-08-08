@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable name="viewModel" type="network.PlaceViewModel"/>
+    </data>
+<androidx.cardview.widget.CardView
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="8dp"
@@ -36,7 +40,7 @@
             android:layout_marginTop="12dp"
             android:layout_toEndOf="@id/circle_img_container"
             android:fontFamily="@font/montserrat_bold"
-            android:text="Restaurant name"
+            android:text="Restaurant Name"
             android:textColor="#000000"
             android:textSize="22sp" />
 
@@ -78,3 +82,4 @@
     </RelativeLayout>
 
 </androidx.cardview.widget.CardView>
+</layout>

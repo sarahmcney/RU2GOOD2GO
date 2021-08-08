@@ -3,6 +3,7 @@ package com.example.ru2good2go
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.view.Window
 import android.view.WindowManager
@@ -15,17 +16,19 @@ import androidx.lifecycle.ViewModelProviders
 import com.example.ru2good2go.databinding.ActivitySignUpBinding
 
 class SignUp : AppCompatActivity() {
-    private val viewModel: PlaceViewModel by lazy {
+    /*private val viewModel: PlaceViewModel by lazy {
         ViewModelProvider(this).get(PlaceViewModel::class.java)
     }
-    private lateinit var binding: ActivitySignUpBinding
+    private lateinit var binding: ActivitySignUpBinding*/
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         requestWindowFeature(Window.FEATURE_NO_TITLE)
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN)
-        setContentView(R.layout.activity_sign_up)
-
-
+        //setContentView(R.layout.activity_sign_up)
+        //binding = ActivitySignUpBinding.inflate(layoutInflater)
+        //setContentView(binding.root)
+        //binding.lifecycleOwner = this
+        //binding.viewModel = viewModel
 
         val fullNameEditText = findViewById<EditText>(R.id.fullNameEditText)
         val emailEditText = findViewById<EditText>(R.id.emailEditText)
@@ -35,6 +38,8 @@ class SignUp : AppCompatActivity() {
 
         val signUpButton = findViewById<Button>(R.id.signUpButton)
         val signInLink = findViewById<TextView>(R.id.linkToSignIn)
+        //val signUpButton: Button = binding.signUpButton
+        //val signInLink: TextView = binding.linkToSignIn
 
         signInLink.setOnClickListener {
             val intent = Intent(this, SignIn::class.java)
