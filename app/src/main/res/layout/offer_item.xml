@@ -5,10 +5,11 @@
         <variable name="viewModel" type="network.PlaceViewModel"/>
     </data>
 <androidx.cardview.widget.CardView
-    android:layout_width="match_parent"
+    android:layout_width="250dp"
     android:layout_height="wrap_content"
     android:layout_margin="8dp"
     app:cardCornerRadius="10dp"
+
     >
 
     <RelativeLayout
@@ -18,14 +19,14 @@
 
         <androidx.cardview.widget.CardView
             android:id="@+id/circle_img_container"
-            android:layout_width="100dp"
+            android:layout_width="230dp"
             android:layout_height="100dp"
             android:elevation="12dp"
-            app:cardCornerRadius="50dp">
+            app:cardCornerRadius="10dp">
 
             <ImageView
                 android:id="@+id/restaurant_image"
-                android:layout_width="280dp"
+                android:layout_width="250dp"
                 android:layout_height="100dp"
                 android:layout_marginEnd="8dp"
                 android:scaleType="centerCrop"
@@ -36,15 +37,39 @@
             android:id="@+id/restaurant_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="12dp"
-            android:layout_marginTop="12dp"
-            android:layout_toEndOf="@id/circle_img_container"
+            android:layout_marginTop="10dp"
             android:fontFamily="@font/montserrat_bold"
+            android:layout_below="@id/circle_img_container"
             android:text="Restaurant Name"
             android:textColor="#000000"
-            android:textSize="22sp" />
+            android:textSize="18sp" />
 
         <TextView
+            android:id="@+id/restaurant_location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/restaurant_name"
+            android:fontFamily="@font/montserrat_semibold"
+            android:text="New Brunswick, NJ"
+            android:layout_marginBottom="5dp"
+            android:textColor="@color/lightGray"
+            android:textSize="12dp"/>
+
+        <TextView
+            android:id="@+id/offer_price"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/restaurant_name"
+            android:fontFamily="@font/montserrat_bold"
+            android:text="$4.99"
+            android:gravity="end"
+            android:layout_marginBottom="5dp"
+            android:layout_marginEnd="3dp"
+            android:textColor="@color/red"
+            android:textSize="14dp"/>
+
+
+        <!--<TextView
             android:id="@+id/restaurant_category"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -78,7 +103,8 @@
             android:fontFamily="@font/montserrat_semibold"
             android:text="Open til xx:xx PM"
             android:textColor="@color/lightGray"
-            android:textSize="12dp" />
+            android:textSize="12dp" />-->
+
     </RelativeLayout>
 
 </androidx.cardview.widget.CardView>

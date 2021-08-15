@@ -7,6 +7,7 @@
         <item name="colorPrimaryDark">@color/red</item>
         <item name="colorAccent">@color/red</item>
         <item name="android:windowBackground">@color/background</item>
+
     </style>
 
     <style name="MyTheme" parent="@android:style/Theme.Light">

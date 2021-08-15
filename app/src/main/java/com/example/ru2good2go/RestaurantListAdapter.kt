@@ -11,9 +11,10 @@ class RestaurantListAdapter(private val restaurantList: List<RestaurantListItem>
     class RestaurantListViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val restaurantImage: ImageView = itemView.findViewById(R.id.restaurant_image)
         val restaurantName: TextView = itemView.findViewById(R.id.restaurant_name)
-        val restaurantCategory: TextView = itemView.findViewById(R.id.restaurant_category)
-        val restaurantDistance: TextView = itemView.findViewById(R.id.restaurant_distance)
-        val restaurantHours: TextView = itemView.findViewById(R.id.restaurant_hours)
+        val restaurantLocation: TextView = itemView.findViewById(R.id.restaurant_location)
+        //val restaurantCategory: TextView = itemView.findViewById(R.id.restaurant_category)
+        //val restaurantDistance: TextView = itemView.findViewById(R.id.restaurant_distance)
+        //val restaurantHours: TextView = itemView.findViewById(R.id.restaurant_hours)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RestaurantListViewHolder {
@@ -26,9 +27,10 @@ class RestaurantListAdapter(private val restaurantList: List<RestaurantListItem>
 
         holder.restaurantImage.setImageResource(currentItem.imageResource)
         holder.restaurantName.text = currentItem.name
-        holder.restaurantCategory.text = currentItem.category
-        holder.restaurantDistance.text = currentItem.distance
-        holder.restaurantHours.text = currentItem.closingTime
+        holder.restaurantLocation.text = currentItem.location
+        //holder.restaurantCategory.text = currentItem.category
+        //holder.restaurantDistance.text = currentItem.distance
+        //holder.restaurantHours.text = currentItem.closingTime
     }
 
     override fun getItemCount() = restaurantList.size

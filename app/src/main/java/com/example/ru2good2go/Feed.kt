@@ -13,7 +13,7 @@ class Feed : AppCompatActivity() {
     private val adapter = RestaurantListAdapter(restaurantList)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_feed)
+        setContentView(R.layout.activity_feed_updated)
 
         Places.initialize(this, R.string.google_services_api_key.toString())
         val placesClient = Places.createClient(this)
@@ -37,36 +37,36 @@ class Feed : AppCompatActivity() {
         //tacoria
         var image = R.mipmap.tacoria_foreground
         var item =
-            RestaurantListItem(image, "Tacoria", "Mexican", "0.5 miles away", "Open til 9:00PM")
+            RestaurantListItem(image, "Tacoria", "New Brunswick, NJ")
         list += item
 
         //honeygrow
         image = R.mipmap.honeygrow_foreground
-        item = RestaurantListItem(image, "Honeygrow", "Salad", "0.7 miles away", "Open til 10:00PM")
+        item = RestaurantListItem(image, "Honeygrow", "New Brunswick, NJ")
         list += item
 
         //fritz's
         image = R.mipmap.fritzs_foreground
-        item = RestaurantListItem(image, "Fritz's", "American", "1.2 miles away", "Open til 8:00PM")
+        item = RestaurantListItem(image, "Fritz's", "New Brunswick, NJ")
         list += item
 
         //halal guys
         image = R.mipmap.halalguys_foreground
-        item = RestaurantListItem(image, "The Halal Guys", "Halal", "0.8 miles away", "Open til 11:00PM")
+        item = RestaurantListItem(image, "The Halal Guys", "New Brunswick, NJ")
         list += item
 
         //ramen nagomi
         image = R.mipmap.ramennagomi_foreground
-        item = RestaurantListItem(image, "Ramen Nagomi", "Ramen", "2.3 miles away", "Open til 9:00PM")
+        item = RestaurantListItem(image, "Ramen Nagomi", "New Brunswick, NJ")
         list += item
 
         //daniel's pizzeria
         image = R.mipmap.daniels_foreground
-        item = RestaurantListItem(image, "Daniel's Pizzeria", "Pizza", "1.0 miles away", "Open til 1:00AM")
+        item = RestaurantListItem(image, "Daniel's Pizzeria", "New Brunswick, NJ")
         list += item
 
         image = R.mipmap.daniels_foreground
-        item = RestaurantListItem(image, "Daniel's Pizzeria", "Pizza", "1.0 miles away", "Open til 1:00AM")
+        item = RestaurantListItem(image, "Daniel's Pizzeria", "New Brunswick, NJ")
         list += item
         return list
     }

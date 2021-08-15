@@ -22,4 +22,6 @@
     <string name="orders">Orders</string>
     <string name="browse">Browse</string>
     <string name="profile">Profile</string>
+    <string name="feed_welcome">Welcome to RU Bites!</string>
+    <string name="current_offers">Current Offers</string>
 </resources>
